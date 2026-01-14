@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 40 20% 97%;
+        --foreground: 20 10% 15%;
+        --card: 40 20% 99%;
+        --card-foreground: 20 10% 15%;
+        --popover: 40 20% 99%;
+        --popover-foreground: 20 10% 15%;
+        --primary: 16 65% 45%;
+        --primary-foreground: 40 20% 98%;
+        --secondary: 45 40% 60%;
+        --secondary-foreground: 20 10% 15%;
+        --muted: 30 15% 90%;
+        --muted-foreground: 20 5% 45%;
+        --accent: 45 40% 60%;
+        --accent-foreground: 20 10% 15%;
+        --destructive: 0 65% 50%;
+        --destructive-foreground: 40 20% 98%;
+        --border: 30 10% 85%;
+        --input: 30 10% 85%;
+        --ring: 16 65% 45%;
+        --chart-1: 16 65% 45%;
+        --chart-2: 45 40% 60%;
+        --chart-3: 25 30% 50%;
+        --chart-4: 180 25% 40%;
+        --chart-5: 30 10% 30%;
+        --radius: 0.75rem;
+    }
+
+    .dark {
+        --background: 20 10% 10%;
+        --foreground: 40 20% 90%;
+        --card: 20 10% 12%;
+        --card-foreground: 40 20% 90%;
+        --popover: 20 10% 12%;
+        --popover-foreground: 40 20% 90%;
+        --primary: 16 65% 55%;
+        --primary-foreground: 40 20% 98%;
+        --secondary: 45 40% 50%;
+        --secondary-foreground: 20 10% 10%;
+        --muted: 20 10% 18%;
+        --muted-foreground: 30 5% 60%;
+        --accent: 45 40% 50%;
+        --accent-foreground: 20 10% 10%;
+        --destructive: 0 60% 40%;
+        --destructive-foreground: 40 20% 90%;
+        --border: 20 10% 20%;
+        --input: 20 10% 20%;
+        --ring: 16 65% 55%;
+        --chart-1: 16 65% 55%;
+        --chart-2: 45 40% 50%;
+        --chart-3: 25 30% 60%;
+        --chart-4: 180 25% 50%;
+        --chart-5: 30 10% 40%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground font-sans antialiased;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+}
+
+/* Typography */
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+    font-family: 'Manrope', sans-serif;
+}

@@ -1,0 +1,33 @@
+/* App.css - Clean styles for ArtLedger */
+
+/* Remove default app styles */
+.App {
+  min-height: 100vh;
+}
+
+/* Ensure proper chart rendering */
+.recharts-wrapper {
+  width: 100% !important;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: hsl(16, 65%, 45%);
+  color: white;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Table striped rows */
+.table-striped tbody tr:nth-child(even) {
+  background-color: hsl(var(--muted) / 0.3);
+}
